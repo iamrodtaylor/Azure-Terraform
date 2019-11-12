@@ -64,7 +64,7 @@ resource "random_id" "randomId" {
 
 
 # Create virtual machine
-/*resource "azurerm_virtual_machine" "linuxterraformvm" {
+resource "azurerm_virtual_machine" "linuxterraformvm" {
     name                  = "linuxVM"
     location              = "australiaeast"
     resource_group_name   = azurerm_resource_group.myterraformgroup.name
@@ -107,4 +107,4 @@ resource "random_id" "randomId" {
         environment = "Terraform Demo"
     }
 }
-*/
+
