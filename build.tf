@@ -36,3 +36,15 @@ resource "azurerm_subnet" "myterraformsubnet" {
     address_prefix       = "10.0.1.0/24"
 }
 
+# Create storage account for boot diagnostics
+resource "azurerm_storage_account" "bootdiagstorageaccount" {
+    name                        = "diag${random_id.randomId.hex}"
+    resource_group_name         = azurerm_resource_group.myterraformgroup.name
+    location                    = "australiaeast"
+    account_tier                = "Standard"
+    account_replication_type    = "LRS"
+
+    tags = {
+        environment = "Terraform Demo"
+    }
+}
